@@ -10,6 +10,7 @@ let activeSlideIndex = 0
 
 sidebar.style.top = `-${(slidesCount - 1) * 100}vh` //4 slaids, need 3
 
+
 //event buttons, callback
 upBtn.addEventListener('click', () => {
 	changeSlide('up')
@@ -17,6 +18,15 @@ upBtn.addEventListener('click', () => {
 
 downBtn.addEventListener('click', () => {
 	changeSlide('down')
+})
+
+//1 commit add use buttons
+document.addEventListener('keydown', event => {
+	if (event.key === 'ArrowUp') {
+		changeSlide('up')
+	} else if (event.key === 'ArrowDown') {
+		changeSlide('down')
+	}
 })
 
 function changeSlide(direction) {
